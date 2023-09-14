@@ -91,7 +91,7 @@
             Assert.That(() => _calculator.Factorial(-5), Throws.ArgumentException);
         }
         [Test]
-        public void Divide_WithDecimalsAsInput_ResultThrowArgumentException()
+        public void Factorial_WithDecimalsAsInput_ResultThrowArgumentException()
         {
             Assert.That(() => _calculator.Factorial(5.5), Throws.ArgumentException);
         }
