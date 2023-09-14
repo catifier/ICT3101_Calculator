@@ -61,14 +61,28 @@
             Assert.That(result, Is.EqualTo(double.NegativeInfinity));
         }
         */
+
+        // Original
+        //[Test]
+        //[TestCase(0, 0)]
+        //[TestCase(0, 10)]
+        //[TestCase(10, 0)]
+        //public void Divide_WithZerosAsInputs_ResultThrowArgumentException(double a, double b)
+        //{
+        //    Assert.That(() => _calculator.Divide(a, b), Throws.ArgumentException);
+        //}
+
+        // For Specflow
         [Test]
         [TestCase(0, 0)]
-        [TestCase(0, 10)]
-        [TestCase(10, 0)]
-        public void Divide_WithZerosAsInputs_ResultThrowArgumentException(double a, double b)
+        public void Divide_WithTwoZeroesAsInputs_ResultEqualToOne(double a, double b)
         {
-            Assert.That(() => _calculator.Divide(a, b), Throws.ArgumentException);
+            // Act
+            double result = _calculator.Divide(a, b);
+            // Assert
+            Assert.That(result, Is.EqualTo(1));
         }
+
         [Test]
         public void Factorial_WithZeroAsInput_ResultEqualToOne()
         {

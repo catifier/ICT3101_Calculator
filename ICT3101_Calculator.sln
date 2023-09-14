@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICT3101_Calculator", "ICT3101_Calculator\ICT3101_Calculator.csproj", "{6FD52268-E212-488C-A2E3-B1782E2299FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICT3101_Calculator", "ICT3101_Calculator\ICT3101_Calculator.csproj", "{6FD52268-E212-488C-A2E3-B1782E2299FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICT3101_Calculator.UnitTests", "ICT3101_Calculator.UnitTests\ICT3101_Calculator.UnitTests.csproj", "{740D622D-4C36-49D3-900F-BBEDB56D50B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICT3101_Calculator.UnitTests", "ICT3101_Calculator.UnitTests\ICT3101_Calculator.UnitTests.csproj", "{740D622D-4C36-49D3-900F-BBEDB56D50B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowCalculatorTests", "SpecFlowCalculatorTests\SpecFlowCalculatorTests.csproj", "{2356E7F0-B37C-474B-B4EF-D25A8DE8F4DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{740D622D-4C36-49D3-900F-BBEDB56D50B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{740D622D-4C36-49D3-900F-BBEDB56D50B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{740D622D-4C36-49D3-900F-BBEDB56D50B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2356E7F0-B37C-474B-B4EF-D25A8DE8F4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2356E7F0-B37C-474B-B4EF-D25A8DE8F4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2356E7F0-B37C-474B-B4EF-D25A8DE8F4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2356E7F0-B37C-474B-B4EF-D25A8DE8F4DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
