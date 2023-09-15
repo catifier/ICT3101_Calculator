@@ -37,21 +37,28 @@ public class Calculator
         }
         return result;
     }
+    //public double Add(double num1, double num2)
+    //{
+    //    return (num1 + num2);
+    //}
     public double Add(double num1, double num2)
     {
-        if (num2 == 11)
+        // Check if string is "binary"
+        string num12 = num1.ToString() + num2.ToString();
+        foreach (char c in num12)
         {
-            switch (num1)
-            {
-                case 1: return 7;
-                case 10: return 11;
-                case 11: return 15;
-                default: return (num1 + num2);
-            }
+            string allowableNumbers = "01";
+            if (!allowableNumbers.Contains(c.ToString()))
+                return (num1 + num2);
         }
 
-        return (num1 + num2);
+        String n1 = num1.ToString();
+        String n2 = num2.ToString();
+        String n3 = n1 + n2;
+
+        return Convert.ToInt32(n3, 2);
     }
+
     public double Subtract(double num1, double num2)
     {
         return (num1 - num2);

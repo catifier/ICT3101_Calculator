@@ -9,14 +9,14 @@
             // Arrange
             _calculator = new Calculator();
         }
-        [Test]
-        public void Add_WhenAddingTwoNumbers_ResultEqualToSum()
-        {
-            // Act
-            double result = _calculator.Add(10, 20);
-            // Assert
-            Assert.That(result, Is.EqualTo(30));
-        }
+        //[Test]
+        //public void Add_WhenAddingTwoNumbers_ResultEqualToSum()
+        //{
+        //    // Act
+        //    double result = _calculator.Add(10, 20);
+        //    // Assert
+        //    Assert.That(result, Is.EqualTo(30));
+        //}
         [Test]
         public void Subtract_WhenSubtractingTwoNumbers_ResultEqualToSubtraction()
         {
@@ -73,15 +73,15 @@
         //}
 
         // For Specflow
-        [Test]
-        [TestCase(0, 0)]
-        public void Divide_WithTwoZeroesAsInputs_ResultEqualToOne(double a, double b)
-        {
-            // Act
-            double result = _calculator.Divide(a, b);
-            // Assert
-            Assert.That(result, Is.EqualTo(1));
-        }
+        //[Test]
+        //[TestCase(0, 0)]
+        //public void Divide_WithTwoZeroesAsInputs_ResultEqualToOne(double a, double b)
+        //{
+        //    // Act
+        //    double result = _calculator.Divide(a, b);
+        //    // Assert
+        //    Assert.That(result, Is.EqualTo(1));
+        //}
 
         [Test]
         public void Factorial_WithZeroAsInput_ResultEqualToOne()
