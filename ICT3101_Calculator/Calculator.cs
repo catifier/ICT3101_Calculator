@@ -185,6 +185,7 @@ public class Calculator
     }
     public double MTBF(double num1, double num2)
     {
+        // num1 is MTTF, num2 is MTTR
         if (num1 < 0 || num2 <= 0)
         {
             throw new ArgumentException("One of the argument is invalid!");
@@ -193,6 +194,7 @@ public class Calculator
     }
     public double Availability(double num1, double num2)
     {
+        // num1 is MTTF, num2 is MTBF
         if (num1 < 0 || num2 <= 0)
         {
             throw new ArgumentException("One of the argument is invalid!");
