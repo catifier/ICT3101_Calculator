@@ -12,6 +12,8 @@
             // Declare variables and set to empty.
             string numInput1 = "";
             string numInput2 = "";
+            string numInput3 = "";
+            string numInput4 = "";
             double result = 0;
             // Ask the user to type the first number.
             Console.Write("Type a number, and then press Enter: ");
@@ -31,6 +33,24 @@
                 Console.Write("This is not valid input. Please enter an integer value: ");
                 numInput2 = Console.ReadLine();
             }
+            // Ask the user to type the third number.
+            Console.Write("Type another number, and then press Enter: ");
+            numInput4 = Console.ReadLine();
+            double cleanNum3 = 0;
+            while (!double.TryParse(numInput2, out cleanNum2))
+            {
+                Console.Write("This is not valid input. Please enter an integer value: ");
+                numInput3 = Console.ReadLine();
+            }
+            // Ask the user to type the fourth number.
+            Console.Write("Type another number, and then press Enter: ");
+            numInput3 = Console.ReadLine();
+            double cleanNum4 = 0;
+            while (!double.TryParse(numInput2, out cleanNum2))
+            {
+                Console.Write("This is not valid input. Please enter an integer value: ");
+                numInput4 = Console.ReadLine();
+            }
             // Ask the user to choose an operator.
             Console.WriteLine("Choose an operator from the following list:");
             Console.WriteLine("\ta - Add");
@@ -40,11 +60,19 @@
             Console.WriteLine("\tf - Factorial");
             Console.WriteLine("\tt - Area of Triangle");
             Console.WriteLine("\tc - Area of Circle");
+            Console.WriteLine("\t1 - MTBF");
+            Console.WriteLine("\t2 - Availability");
+            Console.WriteLine("\t3 - Basic Musa Failure Intensity");
+            Console.WriteLine("\t4 - Basic Musa Average Number of Failures");
+            Console.WriteLine("\t5 - Defect Density (Defects over KLOC)");
+            Console.WriteLine("\t6 - SSI (4 arguments)");
+            Console.WriteLine("\t7 - Logarithmic Musa Failure Intensity");
+            Console.WriteLine("\t8 - Logarithmic Musa Average Number of Failures");
             Console.Write("Your option? ");
             string op = Console.ReadLine();
             try
             {
-                result = _calculator.DoOperation(cleanNum1, cleanNum2, op);
+                result = _calculator.DoOperation(cleanNum1, cleanNum2, cleanNum3, cleanNum4, op);
                 if (double.IsNaN(result))
                 {
                     Console.WriteLine("This operation will result in a mathematical error.\n");

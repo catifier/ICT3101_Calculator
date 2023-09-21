@@ -1,0 +1,27 @@
+﻿Lab 2.3
+
+19. Given the requirements above. Devise an Epic description to represent this set of requirements.
+
+Allow the calculation of quality metrics.
+
+
+
+20. Define some User Story examples for the Features.
+
+As an Engineer,
+I want to calculate the defect density of a system
+So that I can perform quality metric calculations
+
+As an Engineer,
+I want to perform custom calculation for the new total number of Shipped Source Instructions (SSI) in the successive releases of a system
+So that I can perform quality metric calculations
+
+As an Engineer,
+I want to use the Musa Logarithmic model for calculations
+So that I can get the failure intensity and the number of expected failures
+
+
+
+23. In using the BDD process to develop the new functions (and corresponding functionality)
+what were some of the issues you faced? How did you resolve them to get things running?
+--The end of part 3 questions—

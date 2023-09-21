@@ -1,9 +1,27 @@
 ﻿using System;
+using TechTalk.SpecFlow.Assist.ValueRetrievers;
+
+//Console.WriteLine("Choose an operator from the following list:");
+//Console.WriteLine("\ta - Add");
+//Console.WriteLine("\ts - Subtract");
+//Console.WriteLine("\tm - Multiply");
+//Console.WriteLine("\td - Divide");
+//Console.WriteLine("\tf - Factorial");
+//Console.WriteLine("\tt - Area of Triangle");
+//Console.WriteLine("\tc - Area of Circle");
+//Console.WriteLine("\t1 - MTBF");
+//Console.WriteLine("\t2 - Availability");
+//Console.WriteLine("\t3 - Basic Musa Failure Intensity");
+//Console.WriteLine("\t4 - Basic Musa Average Number of Failures");
+//Console.WriteLine("\t5 - Defect Density (Defects over KLOC)");
+//Console.WriteLine("\t6 - SSI (4 arguments)");
+//Console.WriteLine("\t7 - Logarithmic Musa Failure Intensity");
+//Console.WriteLine("\t8 - Logarithmic Musa Average Number of Failures");
 
 public class Calculator
 {
     public Calculator() { }
-    public double DoOperation(double num1, double num2, string op)
+    public double DoOperation(double num1, double num2, double num3, double num4, string op)
     {
         double result = double.NaN; // Default value
                                     // Use a switch statement to do the math.
@@ -30,6 +48,30 @@ public class Calculator
                 break;
             case "c":
                 result = CircleArea(num1);
+                break;
+            case "1":
+                result = MTBF(num1, num2);
+                break;
+            case "2":
+                result = Availability(num1, num2);
+                break;
+            case "3":
+                result = BasicMusaCurrentFailureIntensity(num1, num2, num3);
+                break;
+            case "4":
+                result = BasicMusaAverageNumberOfFailures(num1, num2, num3);
+                break;
+            case "5":
+                result = DefectDensity(num1, num2);
+                break;
+            case "6":
+                result = SSI(num1, num2, num3, num4);
+                break;
+            case "7":
+                result = LogarithmicMusaCurrentFailureIntensity(num1, num2, num3);
+                break;
+            case "8":
+                result = LogarithmicMusaCurrentFailureIntensity(num1, num2, num3);
                 break;
             // Return text for an incorrect option entry.
             default:
@@ -140,5 +182,79 @@ public class Calculator
             throw new ArgumentException("The second argument is greater than the first!");
         }
         return (Factorial(num1) / (Factorial(num1 - num2) * Factorial(num2)));
+    }
+    public double MTBF(double num1, double num2)
+    {
+        if (num1 < 0 || num2 <= 0)
+        {
+            throw new ArgumentException("One of the argument is invalid!");
+        }
+        return (num1 + num2);
+    }
+    public double Availability(double num1, double num2)
+    {
+        if (num1 < 0 || num2 <= 0)
+        {
+            throw new ArgumentException("One of the argument is invalid!");
+        }
+        else if (num1 > num2)
+        {
+            throw new ArgumentException("The MTTF is greater than the MTBF!");
+        }
+        return (num1 / num2);
+    }
+    public double BasicMusaCurrentFailureIntensity(double num1, double num2, double num3)
+    {
+        //num1 is lambda0, num2 is mu, num3 is v0
+        if (num1 < 0 || num2 < 0 || num3 <= 0)
+        {
+            throw new ArgumentException("One of the argument is invalid!");
+        }
+        else if (num2 > num3)
+        {
+            throw new ArgumentException("mu is greater than v0!");
+        }
+        return (num1 * (1 - (num2 / num3)));
+    }
+    public double BasicMusaAverageNumberOfFailures(double num1, double num2, double num3)
+    {
+        //num1 is lambda0, num2 is tau, num3 is v0
+        if (num1 < 0 || num2 < 0 || num3 <= 0)
+        {
+            throw new ArgumentException("One of the argument is invalid!");
+        }
+        return (num3 * (1 - Math.Exp((-1) * (num1 / num3) * num2)));
+    }
+    public double DefectDensity(double num1, double num2)
+    {
+        //num1 is defect count, num2 is KLOC
+        if (num1 <= 0 || num2 <= 0) 
+        {
+            throw new ArgumentException("One of the argument is invalid!");
+        }
+        return (num1 / num2);
+    }
+    public double SSI (double num1, double num2, double num3, double num4)
+    {
+        // num1 is old SSI, num2 is CSI, num3 is deleted, num4 is changed
+        return (num1 + num2 - num3 - num4);
+    }
+    public double LogarithmicMusaCurrentFailureIntensity(double num1, double num2, double num3)
+    {
+        //num1 is lambda0, num2 is mu, num3 is theta
+        if (num1 < 0 || num2 < 0 || num3 <= 0)
+        {
+            throw new ArgumentException("One of the argument is invalid!");
+        }
+        return (num1 * Math.Exp((-1) * (num3 * num2)));
+    }
+    public double LogarithmicMusaAverageNumberOfFailures(double num1, double num2, double num3)
+    {
+        //num1 is lambda0, num2 is tau, num3 is theta
+        if (num1 < 0 || num2 < 0 || num3 <= 0)
+        {
+            throw new ArgumentException("One of the argument is invalid!");
+        }
+        return ((1 / num3) * Math.Log((num1 * num2 * num3) + 1));
     }
 }
