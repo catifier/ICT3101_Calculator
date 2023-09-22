@@ -1,6 +1,8 @@
 ﻿Feature: UsingCalculatorFactorial
 
-A short summary of the feature
+In order to calculate the Factorial
+As a Bean Counter
+I want to use my calculator to do this
 
 @Factorials
 Scenario: Factorial of a number

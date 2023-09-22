@@ -35,18 +35,18 @@
             }
             // Ask the user to type the third number.
             Console.Write("Type another number, and then press Enter: ");
-            numInput4 = Console.ReadLine();
+            numInput3 = Console.ReadLine();
             double cleanNum3 = 0;
-            while (!double.TryParse(numInput2, out cleanNum2))
+            while (!double.TryParse(numInput3, out cleanNum3))
             {
                 Console.Write("This is not valid input. Please enter an integer value: ");
                 numInput3 = Console.ReadLine();
             }
             // Ask the user to type the fourth number.
             Console.Write("Type another number, and then press Enter: ");
-            numInput3 = Console.ReadLine();
+            numInput4 = Console.ReadLine();
             double cleanNum4 = 0;
-            while (!double.TryParse(numInput2, out cleanNum2))
+            while (!double.TryParse(numInput4, out cleanNum4))
             {
                 Console.Write("This is not valid input. Please enter an integer value: ");
                 numInput4 = Console.ReadLine();

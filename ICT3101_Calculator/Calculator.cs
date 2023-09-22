@@ -228,7 +228,7 @@ public class Calculator
     public double DefectDensity(double num1, double num2)
     {
         //num1 is defect count, num2 is KLOC
-        if (num1 <= 0 || num2 <= 0) 
+        if (num2 <= 0) 
         {
             throw new ArgumentException("One of the argument is invalid!");
         }
