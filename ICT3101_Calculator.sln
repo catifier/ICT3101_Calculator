@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICT3101_Calculator", "ICT31
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICT3101_Calculator.UnitTests", "ICT3101_Calculator.UnitTests\ICT3101_Calculator.UnitTests.csproj", "{740D622D-4C36-49D3-900F-BBEDB56D50B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowCalculatorTests", "SpecFlowCalculatorTests\SpecFlowCalculatorTests.csproj", "{2356E7F0-B37C-474B-B4EF-D25A8DE8F4DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlowCalculatorTests", "SpecFlowCalculatorTests\SpecFlowCalculatorTests.csproj", "{2356E7F0-B37C-474B-B4EF-D25A8DE8F4DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9315BB57-DD0E-42BC-8435-690141B8C72A}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet-desktop.yml = .github\workflows\dotnet-desktop.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
