@@ -1,13 +1,17 @@
-﻿namespace ICT3101_Caculator.UnitTests
+﻿using ICT3101_Calculator;
+
+namespace ICT3101_Caculator.UnitTests
 {
     public class CalculatorTests
     {
         private Calculator _calculator;
+        private IFileReader _fileReader;
         [SetUp]
         public void Setup()
         {
             // Arrange
             _calculator = new Calculator();
+            _fileReader = FileReader.GetInstance();
         }
         //[Test]
         //public void Add_WhenAddingTwoNumbers_ResultEqualToSum()
@@ -222,6 +226,69 @@
             // Act
             // Assert
             Assert.That(() => _calculator.UnknownFunctionB(4, 5), Throws.ArgumentException);
+        }
+        [Test]
+        public void GenMagicNum_WhenGivenZero_ResultEqualToEight()
+        {
+            // Act
+            double result = _calculator.GenMagicNum(0, _fileReader);
+            // Assert
+            Assert.That(result, Is.EqualTo(8));
+        }
+        [Test]
+        public void GenMagicNum_WhenGiven1_ResultEqualToZero()
+        {
+            // Act
+            double result = _calculator.GenMagicNum(1, _fileReader);
+            // Assert
+            Assert.That(result, Is.EqualTo(0));
+        }
+        [Test]
+        public void GenMagicNum_WhenGiven20_ResultEqualTo12()
+        {
+            // Act
+            double result = _calculator.GenMagicNum(20, _fileReader);
+            // Assert
+            Assert.That(result, Is.EqualTo(10));
+        }
+        [Test]
+        public void GenMagicNum_WhenGiven30_ResultEqualToNegative16()
+        {
+            // Act
+            double result = _calculator.GenMagicNum(30, _fileReader);
+            // Assert
+            Assert.That(result, Is.EqualTo(16));
+        }
+        [Test]
+        public void GenMagicNum_WhenGiven34_ResultEqualTo34()
+        {
+            // Act
+            double result = _calculator.GenMagicNum(34, _fileReader);
+            // Assert
+            Assert.That(result, Is.EqualTo(14));
+        }
+        [Test]
+        public void GenMagicNum_WhenGivenMinus1_ResultEqualToZero()
+        {
+            // Act
+            double result = _calculator.GenMagicNum(-1, _fileReader);
+            // Assert
+            Assert.That(result, Is.EqualTo(0));
+        }
+        [Test]
+        public void GenMagicNum_WhenGiven100_ResultEqualToZero()
+        {
+            // Act
+            double result = _calculator.GenMagicNum(100, _fileReader);
+            // Assert
+            Assert.That(result, Is.EqualTo(0));
+        }
+        [Test]
+        public void GenMagicNum_WhenGiven4_ResultThrowException()
+        {
+            // Act
+            // Assert
+            Assert.That(() => _calculator.GenMagicNum(4, _fileReader), Throws.Exception);
         }
     }
 }

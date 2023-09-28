@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ICT3101_Calculator;
+using System;
 using TechTalk.SpecFlow.Assist.ValueRetrievers;
 
 //Console.WriteLine("Choose an operator from the following list:");
@@ -21,6 +22,7 @@ using TechTalk.SpecFlow.Assist.ValueRetrievers;
 public class Calculator
 {
     public Calculator() { }
+
     public double DoOperation(double num1, double num2, double num3, double num4, string op)
     {
         double result = double.NaN; // Default value
@@ -258,5 +260,20 @@ public class Calculator
             throw new ArgumentException("One of the argument is invalid!");
         }
         return ((1 / num3) * Math.Log((num1 * num2 * num3) + 1));
+    }
+    public double GenMagicNum(double input, IFileReader fileReader)
+    {
+        double result = 0;
+        int choice = Convert.ToInt16(input);
+        //Dependency------------------------------
+        // ICT3101_Calculator.FileReader getTheMagic = new ICT3101_Calculator.FileReader();
+        //----------------------------------------
+        string[] magicStrings = fileReader.Read("../../../../MagicNumbers.txt");
+        if ((choice >= 0) && (choice < magicStrings.Length))
+        {
+            result = Convert.ToDouble(magicStrings[choice]);
+        }
+        result = (result > 0) ? (2 * result) : (-2 * result);
+        return result;
     }
 }
