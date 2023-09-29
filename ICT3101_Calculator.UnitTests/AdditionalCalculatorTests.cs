@@ -33,7 +33,7 @@ namespace ICT3101_Caculator.UnitTests
             Assert.That(result, Is.EqualTo(0));
         }
         [Test]
-        public void GenMagicNum_WhenGiven20_ResultEqualTo12()
+        public void GenMagicNum_WhenGiven20_ResultEqualTo10()
         {
             // Act
             double result = _calculator.GenMagicNum(20, _mockFileReader.Object);
@@ -49,7 +49,7 @@ namespace ICT3101_Caculator.UnitTests
             Assert.That(result, Is.EqualTo(16));
         }
         [Test]
-        public void GenMagicNum_WhenGiven34_ResultEqualTo34()
+        public void GenMagicNum_WhenGiven34_ResultEqualTo14()
         {
             // Act
             double result = _calculator.GenMagicNum(34, _mockFileReader.Object);

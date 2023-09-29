@@ -8,6 +8,7 @@ namespace ICT3101_Calculator
 {
     public sealed class FileReader : IFileReader
     {
+        // It's a singleton!
         private FileReader() { }
         private static FileReader _instance;
         private static readonly object _lock = new object();
